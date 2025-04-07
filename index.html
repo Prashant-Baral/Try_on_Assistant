@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Try-On Assistant</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header>
+            <h1>Virtual Try-On Assistant</h1>
+            <p>Powered by L'Oreal Modiface API</p>
+        </header>
+
+        <!-- Main Content -->
+        <main>
+            <!-- Video Container -->
+            <div class="video-container">
+                <video id="user-video" autoplay playsinline></video>
+                <canvas id="overlay-canvas"></canvas>
+                <div class="camera-status">
+                    <span class="status-dot"></span>
+                    Camera Ready
+                </div>
+            </div>
+
+            <!-- Chat Interface -->
+            <div class="chat-interface">
+                <div class="chat-header">
+                    <h2>AI Assistant</h2>
+                    <div class="assistant-status">
+                        <span class="status-dot active"></span>
+                        Online
+                    </div>
+                </div>
+                <div class="chat-messages" id="chat-messages">
+                    <!-- Messages will be added here -->
+                </div>
+                <div class="chat-input">
+                    <input type="text" id="user-input" placeholder="Ask me anything about virtual try-on...">
+                    <button id="send-button">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Style Options -->
+            <div class="style-options">
+                <div class="style-category">
+                    <h3>Makeup Styles</h3>
+                    <div class="style-filter">
+                        <button class="filter-btn active" data-filter="all">All</button>
+                        <button class="filter-btn" data-filter="natural">Natural</button>
+                        <button class="filter-btn" data-filter="glamorous">Glamorous</button>
+                        <button class="filter-btn" data-filter="evening">Evening</button>
+                    </div>
+                    <div class="makeup-options">
+                        <!-- Makeup items will be added here -->
+                    </div>
+                </div>
+                <div class="style-category">
+                    <h3>Clothing Styles</h3>
+                    <div class="style-filter">
+                        <button class="filter-btn active" data-filter="all">All</button>
+                        <button class="filter-btn" data-filter="casual">Casual</button>
+                        <button class="filter-btn" data-filter="formal">Formal</button>
+                        <button class="filter-btn" data-filter="evening">Evening</button>
+                    </div>
+                    <div class="clothing-options">
+                        <!-- Clothing items will be added here -->
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Action Buttons -->
+        <div class="action-buttons">
+            <button id="start-camera" class="primary-btn">
+                <i class="fas fa-camera"></i>
+                Start Camera
+            </button>
+            <button id="upload-photo" class="secondary-btn">
+                <i class="fas fa-upload"></i>
+                Upload Photo
+            </button>
+            <button id="clear-overlay" class="secondary-btn">
+                <i class="fas fa-times"></i>
+                Clear Overlay
+            </button>
+            <button id="save-look" class="primary-btn">
+                <i class="fas fa-save"></i>
+                Save Look
+            </button>
+            <button id="share-look" class="secondary-btn">
+                <i class="fas fa-share-alt"></i>
+                Share Look
+            </button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
